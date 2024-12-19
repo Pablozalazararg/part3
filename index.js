@@ -7,6 +7,8 @@ app.use(cors())
 
 app.use(morgan('tiny'))
 
+app.use(express.static('dist'))
+
 let persons = [
   { 
     "id": 1,
