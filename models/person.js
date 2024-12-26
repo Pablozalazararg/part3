@@ -14,8 +14,16 @@ mongoose.connect(url)
   })
 /*establece el esquema de la base de datos*/
 const personSchema = new mongoose.Schema({
-  nombre: String,
-  number: Number,
+  nombre: {
+    type: String,
+    minLength: 1,
+    required: true
+  },
+  number: {
+    type: number,
+    minLength: 9,
+    required: true
+  },
 })
 const Person = mongoose.model('Person', personSchema)
 personSchema.set('toJSON', {
